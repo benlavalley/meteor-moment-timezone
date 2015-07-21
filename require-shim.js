@@ -5,10 +5,7 @@
   if (typeof Package === "undefined") {
     self = this;
   } else {
-    self = Package["moment"];
-    if (!self) {
-      self = Package["mrt:moment"]
-    }
+    self = Package["momentjs:moment"];
   }
 
   if (this.require !== undefined) {
@@ -16,7 +13,7 @@
   }
   this.require = function(packageName) {
     return self[packageName];
-  }
+  };
 
   if (this.module !== undefined) {
     this.__AC_OLD_MODULE = this.module;
